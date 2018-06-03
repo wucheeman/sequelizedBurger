@@ -1,0 +1,6 @@
+<ul class="pl-1">
+	{{#unless devoured}}
+		{{@index}}. {{burger_name}}
+		<button class="devour btn btn-warning btn-sm float-right" data-id="{{id}}" data-devoured="{{devoured}}">DEVOUR IT!!</button>
+	{{/unless}}
+</ul>

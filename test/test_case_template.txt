@@ -1,0 +1,117 @@
+EAT-DA-BURGER TEST RESULTS TEMPLATE
+
+d = deferred
+e = met by enhancement
+f = failed
+p = passed
+s = skipped
+w = waiting for further work
+
+Make sure you're working in a copy of this for a homework assignment! 
+
+Static Requirements
+===================
+[] Application has these files and directory structure:
+
+		├── config
+		│   ├── connection.js
+		│   └── orm.js
+		│ 
+		├── controllers
+		│   └── burgers_controller.js
+		│
+		├── db
+		│   ├── schema.sql
+		│   └── seeds.sql
+		│
+		├── models
+		│   └── burger.js
+		│ 
+		├── node_modules
+		│ 
+		├── package.json
+		│
+		├── public
+		│   ├── assets
+		│   │   ├── css
+		│   │   │   └── burger_style.css
+		│   │   └── img
+		│   │       └── burger.png
+		│   └── test.html
+		│
+		├── server.js
+		│
+		└── views
+			├── index.handlebars
+			└── layouts
+				└── main.handlebars
+
+[] Application has package.json
+[] server.js requires express and body-parser.
+[] db folder has files "schema.sql" and "seed.sql"
+[] db has this structure:
+   ()`burgers` table with these fields:
+     {} **id**: an auto incrementing int that serves as the primary key.
+     {}**burger_name**: a string.
+     {} **devoured**: a boolean.
+[] seeds.sql has at least three entries
+[] connection.js connects Node to MySQL.
+[] connection.js exports the connection.
+[] `orm.js` requires `connection.js`
+[] orm.js contains an object that provides these methods to execute MySQL commands in the controllers to  retrieve and store data in the db:
+     ()`selectAll()`
+     ()`insertOne()`
+     ()`updateOne()`
+[] orm.js exports the ORM object.
+[] `burger.js` file imports `orm.js` into `burger.js`
+[] `burger.js` contains code to call the ORM functions using burger specific input
+[] burger.js exports these calls.
+[] burgers_controller.js` imports Express and burger.js`
+[] burgers_controller.js creates the `router` for the app
+[] burger_controller.js exports the `router`.	
+	
+Functional Requirements
+=======================
+[] Enables user to submits a burger's name
+[] After entry, displays the burger on the left side of the page -- the waiting area
+[] Each burger in the waiting area has a `Devour it!` button.
+[] A burger will move to the right side of the page when the user clicks button.
+[] Each burger in the waiting area has a number representing order of entry as well as a name.
+{} App stores every burger and state (whether devoured or not) in database.
+
+
+Bonus
+=====
+None.
+
+Functionality
+=============
+[] App initializes globals correctly
+[] App reinitializes globals correctly
+[] Front end rejects burger names over 25 characters in length
+[] Front end rejects empty submission of a burger
+[] Front end trims excess white space from new burger name
+[] Back end prevents burger names over 25 characters in length
+[] Back end prevents addition of a burger with no name
+[] Back end trims excess white space from new burger name
+[] All unit tests pass
+
+Display
+=======
+[] Page closely resembles demo video
+
+Installation
+============
+[] Package installs correctly in a new directory
+	() node packages
+	() database
+[] All dependencies are listed in package.json
+
+Cleanup
+=======
+[] JS delinted
+
+Heroku
+======
+[] Page performs on load as expected
+[] Page performs after reload as expected

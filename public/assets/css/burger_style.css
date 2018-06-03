@@ -1,0 +1,10 @@
+.background {
+  /* Photo by Pablo Merchán Montes on Unsplash */
+  background-image: url("./../img/background_burger.jpg");
+
+  height: 100%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
