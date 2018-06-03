@@ -1,0 +1,13 @@
+[] .gitignore updated to ignore config/config.json
+[] Install 	sequelize, sequelize-cli, and mysql2
+[] Update config/connection.js to connect via Sequelize
+[] Add models/index.js
+[] Update server.js
+[] Bug fix after test of basic connectivity
+[] Add model for burger
+[] update ROUTES to use sequelize calls and replace orm.js
+	{] pseudo code
+	() insertOne
+	() selectAll
+	() updateOne
+[] Remove orm.js

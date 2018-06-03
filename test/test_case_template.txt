@@ -9,69 +9,21 @@ w = waiting for further work
 
 Make sure you're working in a copy of this for a homework assignment! 
 
+~~~~~~~~~~~~~~~~~~~~~~~~TIER 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Static Requirements
 ===================
-[] Application has these files and directory structure:
+[] Sequelize builds the burgers table
+[] devoured field has default value 'false'
+[] config.json has local MySQL info in 'production' section
+[] config.json has JawsBD info in 'production' section
+[] burgers.js uses sequelize calls, rather than calls to orm.js
+[] orm.js removed
 
-		├── config
-		│   ├── connection.js
-		│   └── orm.js
-		│ 
-		├── controllers
-		│   └── burgers_controller.js
-		│
-		├── db
-		│   ├── schema.sql
-		│   └── seeds.sql
-		│
-		├── models
-		│   └── burger.js
-		│ 
-		├── node_modules
-		│ 
-		├── package.json
-		│
-		├── public
-		│   ├── assets
-		│   │   ├── css
-		│   │   │   └── burger_style.css
-		│   │   └── img
-		│   │       └── burger.png
-		│   └── test.html
-		│
-		├── server.js
-		│
-		└── views
-			├── index.handlebars
-			└── layouts
-				└── main.handlebars
-
-[] Application has package.json
-[] server.js requires express and body-parser.
-[] db folder has files "schema.sql" and "seed.sql"
-[] db has this structure:
-   ()`burgers` table with these fields:
-     {} **id**: an auto incrementing int that serves as the primary key.
-     {}**burger_name**: a string.
-     {} **devoured**: a boolean.
-[] seeds.sql has at least three entries
-[] connection.js connects Node to MySQL.
-[] connection.js exports the connection.
-[] `orm.js` requires `connection.js`
-[] orm.js contains an object that provides these methods to execute MySQL commands in the controllers to  retrieve and store data in the db:
-     ()`selectAll()`
-     ()`insertOne()`
-     ()`updateOne()`
-[] orm.js exports the ORM object.
-[] `burger.js` file imports `orm.js` into `burger.js`
-[] `burger.js` contains code to call the ORM functions using burger specific input
-[] burger.js exports these calls.
-[] burgers_controller.js` imports Express and burger.js`
-[] burgers_controller.js creates the `router` for the app
-[] burger_controller.js exports the `router`.	
 	
 Functional Requirements
 =======================
+[] App creates DB correctly
 [] Enables user to submits a burger's name
 [] After entry, displays the burger on the left side of the page -- the waiting area
 [] Each burger in the waiting area has a `Devour it!` button.
@@ -80,9 +32,25 @@ Functional Requirements
 {} App stores every burger and state (whether devoured or not) in database.
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~TIER 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Static Requirements
+===================
+[] App has customer model
+[] Customer model is associated with the Burger model
+
+Functional Requirements
+=======================
+[] 'App does something with customer - burger association'
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Bonus
 =====
-None.
+[] Model validates that burger's name cannot be null
+[] Model validates that burger's devoured status is false by default
+[] Model validates that customer's name cannot be null
+[] App orders the Burgers returned to the user in alphabetical order using the Sequelize "order" option.
 
 Functionality
 =============

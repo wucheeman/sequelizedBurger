@@ -7,6 +7,7 @@ target/
 environment.txt
 public/assets/img/small_burger.png
 public/assets/img/very_small_burger.png
+config/config.json
 
 # Executables
 
